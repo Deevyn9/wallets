@@ -254,7 +254,7 @@ main .graph__area .main__graph .rate .icon {
   width: 15px;
   border-radius: 50%;
   margin-right: 5px;
-  background-color: black;
+  background-color: #fabd4b6f;
   display: grid;
   place-items: center;
 }
@@ -263,7 +263,7 @@ main .graph__area .main__graph .rate .icon .inner__icon {
   height: 7px;
   width: 7px;
   border-radius: 50%;
-  background-color: white;
+  background-color: #feb225;
 }
 
 main .graph__area .main__graph .rise-drop .lower,
