@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eeeeee;
+  padding-bottom: 80px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  background-color: white;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 5px;
+}
+
+header .menu__btn {
+  z-index: 501;
+  cursor: pointer;
+}
+
+header .menu__container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.415);
+  z-index: 500;
+}
+
+header .menu__container .dropdown {
+  background-color: white;
+  width: 250px;
+  padding: 10px 0 10px 10px;
+  border-radius: 10px;
+  position: relative;
+  top: 80px;
+  opacity: 0;
+  left: calc(100vw - 270px);
+  animation: appear 0.3s ease-in-out 0.2s forwards;
+}
+
+@keyframes appear {
+  from {
+    margin-top: -40px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+  }
+}
+
+header .menu__container .dropdown ul {
+  list-style: none;
+}
+
+header .menu__container .dropdown ul li {
+  border-top: 1px solid rgb(145, 145, 145);
+  padding: 15px 0;
+}
+
+header .menu__container .dropdown ul li:nth-child(1) {
+  border-top: none;
+}
+
+.bottom__menu {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 500000;
+}
+.bottom__menu img {
+  width: 28px;
+}
+
+.bottom__menu .wallet img {
+  width: 35px;
+}
+
+main {
+  padding: 30px;
+}
+
+main .balance {
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+main .balance .currency {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .balance .currency .name {
+  display: flex;
+  align-items: center;
+}
+
+main .balance .currency .name .logo {
+  margin-right: 15px;
+}
+
+main .balance .currency .abbreviation {
+  color: #9e9e9e;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+main .balance .main__balance {
+  font-size: 37px;
+  font-weight: 600;
+  margin: 15px 0 10px;
+}
+
+main .balance .conversion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+main .balance .conversion .dollar__amount {
+  color: #9e9e9e;
+}
+
+main .balance .conversion .price__shift {
+  font-size: 15px;
+  background-color: red;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+main .balance .sale__btns {
+  height: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+}
+
+main .balance .sale__btns.collapsed {
+  height: 0px;
+}
+
+main .balance .sale__btns button {
+  border: none;
+  width: 120px;
+  border-radius: 10px;
+  height: 80%;
+  font-size: 18px;
+  color: white;
+  cursor: pointer;
+}
+
+main .balance .sale__btns button:nth-child(1) {
+  background-color: green;
+}
+
+main .balance .sale__btns button:nth-child(2) {
+  background-color: red;
+}
+
+main .balance .arrow {
+  align-self: center;
+  background-color: unset;
+  cursor: pointer;
+}
+
+main .balance .arrow.flipped img {
+  transition: 0.3s all ease-in-out;
+  transform: rotate(180deg);
+}
+
+main .graph__area .frequency {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+main .graph__area .frequency .time {
+  font-weight: 700;
+  color: #9e9e9e;
+  cursor: pointer;
+}
+
+main .graph__area .frequency .time.active {
+  background-color: #9e9e9e;
+  color: white;
+  padding: 4px 15px;
+  border-radius: 10px;
+}
+
+main .graph__area .main__graph {
+  background-color: white;
+  position: relative;
+  width: 100%;
+  height: 200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+main .graph__area .main__graph .rise-drop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .graph__area .main__graph .main__rate {
+  /* color:; */
+  z-index: 5000;
+  font-weight: bold;
+  font-size: 17px;
+  letter-spacing: 1px;
+  /* color: #feb225; */
+}
+
+main .graph__area .main__graph .rate {
+  display: flex;
+  align-items: center;
+}
+
+main .graph__area .main__graph .rate .icon {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-right: 5px;
+  background-color: black;
+  display: grid;
+  place-items: center;
+}
+
+main .graph__area .main__graph .rate .icon .inner__icon {
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+main .graph__area .main__graph .rise-drop .lower,
+main .graph__area .main__graph .rise-drop .higher {
+  display: flex;
+  align-items: center;
+}
+
+main .graph__area .main__graph .rise-drop .dot {
+  height: 7px;
+  width: 7px;
+  background-color: red;
+  margin-right: 5px;
+  border-radius: 100%;
+}
+
+main .graph__area .main__graph .rise-drop .higher .dot {
+  background-color: green;
+}
+
+main .buy-sell {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+main .buy-sell .btn {
+  background-color: white;
+  width: 46%;
+  height: 120px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+
+main .buy-sell .btn:hover {
+  transform: scale(1.01);
+}
+
+main .buy-sell .btn .btn__text {
+  margin-top: 5px;
+}
+
+@media (max-width: 350px) {
+  header h1 {
+    font-size: 8vw;
+  }
+
+  header .menu__container .dropdown {
+    width: 80%;
+    left: 20px;
+  }
+
+  main .balance .currency .name .logo {
+    margin-right: 5px;
+  }
+
+  main .balance .currency .name .logo img {
+    width: 30px;
+  }
+
+  main .balance .main__balance {
+    font-size: 8vw;
+  }
+
+  main .balance .conversion .dollar__amount {
+    font-size: 5vw;
+  }
+
+  main .balance .conversion .price__shift {
+    padding: 5px 10px;
+    font-size: 10px;
+  }
+
+  main .balance .sale__btns button {
+    width: 45%;
+  }
+
+  main .graph__area .frequency .time {
+    font-size: 12px;
+  }
+
+  main .graph__area .frequency .time.active {
+    padding: 4px 7px;
+  }
+
+  main .main__graph .rise-drop {
+    font-size: 4vw;
+  }
+}
+
+@media (min-width: 700px) {
+  header {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  main {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  .bottom__menu {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+
+  main {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+
+  .bottom__menu {
+    padding-left: 300px;
+    padding-right: 300px;
+  }
+}
