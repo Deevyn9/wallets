@@ -10,6 +10,10 @@ import Bell from "./assets/bell.png";
 import Settings from "./assets/settings.png";
 import BlueDollar from "./assets/blue-dollar.png";
 import PinkDollar from "./assets/pink-dollar.png";
+import Edit from "./assets/edit.png";
+import Courier from "./assets/courier.png";
+import Share from "./assets/share.png";
+import Remove from "./assets/remove.png";
 import { AreaChart, Area, ResponsiveContainer } from "recharts";
 
 function App() {
@@ -74,10 +78,18 @@ function App() {
           <div className="menu__container">
             <div className="dropdown">
               <ul>
-                <li>Edit</li>
-                <li>Courier info</li>
-                <li>Share</li>
-                <li>Remove</li>
+                <li>
+                  <div>Edit</div> <img src={Edit} alt="exit" />
+                </li>
+                <li>
+                  <div>Courier info</div> <img src={Courier} alt="exit" />
+                </li>
+                <li>
+                  <div>Share</div> <img src={Share} alt="exit" />
+                </li>
+                <li>
+                  <div>Remove</div> <img src={Remove} alt="exit" />
+                </li>
               </ul>
             </div>
           </div>

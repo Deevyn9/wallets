@@ -65,6 +65,14 @@ header .menu__container .dropdown ul {
 header .menu__container .dropdown ul li {
   border-top: 1px solid rgb(145, 145, 145);
   padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .menu__container .dropdown ul li img {
+  width: 20px;
+  margin-right: 20px;
 }
 
 header .menu__container .dropdown ul li:nth-child(1) {
